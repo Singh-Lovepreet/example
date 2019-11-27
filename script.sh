@@ -1,3 +1,3 @@
 #!/bin/sh
 service mongodb start
-node index.js
+pm2 start index.js --name "MedtrailApp"
