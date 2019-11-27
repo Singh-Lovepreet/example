@@ -3,8 +3,6 @@ services:
   app:
     container_name: docker-node-mongo
     image: lovepreet47/example:latest
-    volumes:
-      - .:/usr/src/app
     restart: always
     ports:
       - '4000:4000'
