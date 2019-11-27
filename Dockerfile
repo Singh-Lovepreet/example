@@ -9,6 +9,7 @@ RUN apt install mongodb -y
 RUN apt install npm -y
 RUN apt install curl -y
 RUN npm install -g n -y
+RUN npm install -g pm2@latest -y
 RUN n 10
 
 COPY . .
