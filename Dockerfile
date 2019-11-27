@@ -13,5 +13,5 @@ RUN n 10
 
 COPY . .
 RUN npm install
-EXPOSE 4001
+EXPOSE 4000
 CMD ["./script.sh"]
