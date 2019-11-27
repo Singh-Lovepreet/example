@@ -1,13 +1,17 @@
-FROM node:10
+FROM ubuntu:16.04
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
-
-RUN npm install
+COPY script.sh ./
+RUN apt-get update -y
+RUN apt install mongodb -y
+RUN apt install npm -y
+RUN apt install curl -y
+RUN npm install -g n -y
+RUN n 10
 
 COPY . .
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
+RUN npm install
+EXPOSE 4001
+CMD ["./script.sh"]
