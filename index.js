@@ -33,6 +33,14 @@ app.post('/item/add', (req, res) => {
   newItem.save().then(item => res.redirect('/'));
 });
 
+app.post('/item/add', (req, res) => {
+  const newItem = new Item({
+    name: req.body.name
+  });
+
+  newItem.save().then(item => res.redirect('/'));
+});
+
 const port = 4000;
 
 app.listen(port, () => console.log('Server running...'));
